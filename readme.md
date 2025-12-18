@@ -1,3 +1,22 @@
+# STM32F411CEU6 UART Bootloader
+
+
+本项目基于 **STM32F411CEU6** 单片机实现了一个轻量级的 Bootloader，支持通过 UART（串口）与 Python 上位机通信进行固件升级（IAP）。
+
+## 📂 目录结构
+
+项目主要包含以下三个核心部分：
+
+```text
+Project_Root
+├── 📂 Bootloader      # Bootloader 底层驱动程序（引导加载程序）
+├── 📂 Firmware        # 用于测试的 APP 固件（通过 LED 闪烁频率验证升级结果）
+└── 📂 bootloader_app  # 基于 Python 编写的 PC 端上位机工具
+```
+
+## 🚀 功能特性
+
+*   **极简 IAP 实现**：通过串口（UART）完成固件数据的传输与写入。
 *   **Python 上位机**：提供跨平台的 Python 脚本工具，用于发送固件文件。
 *   **状态验证**：配套测试固件通过 LED 闪烁周期的变化，直观展示升级是否成功。
 *   **轻量级**：针对 STM32F411CEU6 资源优化，占用 Flash 空间小。
